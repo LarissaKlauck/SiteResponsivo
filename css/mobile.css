@@ -1,0 +1,84 @@
+#navbar {
+  height: 160px;
+  width: 100%;
+}
+
+#navbarconteiner {
+  flex-direction: column;
+  padding: 8px 0;
+}
+
+#navbar-items {
+  flex-direction: column;
+  font-size: 0.8rem;
+  text-align: center;
+  width: 100%;
+}
+
+.logo {
+  font-size: 1.5rem;
+}
+
+/* colocando as linhas que separam os itens da navbar */
+/* pegando um item (li) e escolhendo em qual vai colocar as linhas (no "filho 2) */
+#navbar-items li:nth-child(2) {
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+}
+
+/* Showcase */
+#showcase-conteiner h2 {
+  font-size: 2.2rem;
+}
+#showcase-conteiner p {
+  font-size: 1rem;
+}
+
+/* Linguages/clientes */
+#clients-conteiner {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.imgclient {
+  width: 100%;
+}
+
+/* Informações */
+#featuresconteiner {
+  grid-template-columns: 1fr;
+}
+
+#featuresconteiner .featureclass:nth-child(2) {
+  margin: 15px 0;
+}
+
+/* produtos/descrição */
+.imagem5 {
+  width: 120%;
+}
+
+#productconteiner {
+  flex-direction: column;
+}
+
+#items {
+  width: 100%;
+  align-items: center;
+  text-align: justify;
+  padding: 0;
+}
+
+/* testimonials */
+.testimonialclass {
+  flex-direction: column;
+  text-align: center;
+}
+
+/* Gallery */
+#gallery-conteiner {
+  grid-template-columns: 1fr;
+}
+
+.gallery-image {
+  width: 100%;
+}

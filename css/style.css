@@ -1,0 +1,287 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+* {
+  /* essa função do box sizing desconsidera o padding e margin na hora de contar a largura/altura do elemento */
+  box-sizing: border-box;
+  /* a seguir é pra zerar todos os elementos (alguns já tem margin/padding como configuração padrão no html) */
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+a {
+  /* tira o sublinhado dos links A */
+  text-decoration: none;
+  /* vai herdar a cor do elemento pai */
+  color: inherit;
+}
+
+.headline {
+  /* em é a unidade de medida (no caso vai ser 2.2x o tamanho padrão do rem*/
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 50px;
+  letter-spacing: 2px;
+}
+
+/* BARRA DE NAVEGAÇÃO */
+#navbar {
+  /* nesse caso o width vai ser 100% do elemento pai nesse caso o body, isso significa que vai pegar toda a largura da pag */
+  width: 100%;
+  background-color: #111;
+  color: #eee;
+  height: 80px;
+  /* a barra de naveção fica fixa mesmo rolando a pagina */
+  position: fixed;
+}
+
+#navbarconteiner {
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  /* flex é pra que os diferentes elementos fique lado a lado (no caso a lista ul e h1) */
+  display: flex;
+  /* agora é pra não ficar um por cima do outro */
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 2rem;
+}
+
+#navbar-items {
+  display: flex;
+  list-style: none;
+  text-transform: uppercase;
+}
+
+#navbar-items li {
+  padding: 10px;
+}
+
+/* Primeiro tópico/SHOWCASE */
+#headershowcase {
+  /* VH é uma unidade de medida que é proporcional ao tamanho da tela do dispositivo que estiver usando */
+  /* 1vh=1/100 do tamanho da tela, então 100vh=100/100 */
+  /* nesse caso aprox 10% da tela é navbar e 90% o showcase */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #eee;
+  /* nesse caso o center/cover é que ajusta a imagem na tela */
+  /* no url tem dois pontos pq o css está dentro de uma pasta, então um ponto indica que está saindo dessa pasta */
+  background: url("../imagens/pexels-pixabay-248515.jpg") no-repeat center
+    center/cover;
+
+  /* overlay
+  /* pra mudar a intensidade do over os valores vão de 0 a 1 do ultimo numero que é opacidade */
+  background-color: rgba(189, 92, 12, 0);
+  /* é esse comendo que permite a sobreposição */
+  background-blend-mode: color;
+}
+
+#showcase-conteiner {
+  text-align: center;
+  color: #eee;
+}
+
+#showcase-conteiner h2 {
+  font-size: 2.5rem;
+}
+#showcase-conteiner p {
+  font-size: 1.2rem;
+  /* 7px cima/baixo 0px dos lados */
+  /* esse padding acaba determinando a distância dos elementos (h2,p,buttom) */
+  padding: 7px 0px;
+}
+.btn {
+  display: inline-block;
+  /* top/bottom    left/right */
+  padding: 15px 60px;
+  text-transform: uppercase;
+  background-color: #111;
+  color: #eee;
+  border-radius: 5px;
+  /* esse transition faz com que o botão mude a cor quando passa o mouse por cima */
+  transition: background 500ms ease;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: #000;
+}
+
+/* Clientes/Linguagens */
+#clients {
+  background-color: #eee;
+  color: #111;
+  padding: 30px;
+}
+
+#clients .headline {
+  padding: 10px;
+}
+
+.clients-conteiner {
+  /* comando GRID pode ser aplicado com várias funções a respeito de layout, proporção e tam de elementos */
+  display: grid;
+  /* nesse caso é repeat 4x pq são 4 img e 1fr pq cada imagem fica com 1 fração */
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}
+
+.imgclient {
+  display: inline-block;
+  width: 250px;
+  height: auto;
+  padding: 30px;
+}
+
+/* About */
+#features {
+  width: 100%;
+  background: #000;
+  color: #eee;
+  padding: 50px;
+}
+
+#featuresconteiner {
+  width: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* essa função é para distanciar uma coluna da outra */
+  column-gap: 50px;
+}
+
+.featureclass {
+  display: flex;
+  flex-direction: column;
+  background: #333;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.featureclass p {
+  font-size: 0.8rem;
+}
+
+.features-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Nosso produto */
+#product {
+  width: 100%;
+  padding: 50px;
+}
+
+#productconteiner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagem5 {
+  width: 500px;
+  height: auto;
+}
+
+#items {
+  width: 680px;
+  padding-left: 70px;
+}
+
+#items .item {
+  display: flex;
+  margin: 25px 0;
+  font-size: 1.2rem;
+  text-align: justify;
+}
+
+i {
+  padding-right: 25px;
+}
+
+/* Testimonials */
+#testimonials {
+  width: 100%;
+  background: #222;
+  color: #eee;
+  padding: 20px;
+}
+
+#testimonials .headline {
+  padding: 25px;
+}
+
+#testimonialsconteiner {
+  /* altera o tam do retangulo cinza claro que sobrepoe o cinza escuro */
+  width: 80%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.testimonialclass {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  background: #333;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.testimonialclass p {
+  padding: 0 40px;
+  text-align: justify;
+}
+
+/* IMPORTANTE: DIMENSIONAR IMAGEM */
+.testimonialimage {
+  height: 140px;
+  width: auto;
+  border-radius: 50%;
+  margin: 15px;
+}
+
+/* Galeria */
+#gallery {
+  width: 95%;
+  background: #fff;
+  margin: auto;
+  padding: 35px;
+}
+
+#gallery-conteiner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 10px;
+  justify-items: center;
+}
+
+.gallery-image {
+  display: inline-block;
+  width: 360px;
+  height: auto;
+  border-radius: 5px;
+  padding: 15px 0;
+}
+
+/* FOOTER */
+#footer {
+  background: #222;
+  color: #eee;
+  padding: 30px;
+  text-align: center;
+}
